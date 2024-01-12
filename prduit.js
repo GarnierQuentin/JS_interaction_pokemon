@@ -13,6 +13,7 @@ fetch(apiUrl3)
     .then(data => {
     data.results.forEach(element => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${element.name}`)
+        
         .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -31,10 +32,25 @@ fetch(apiUrl3)
             </ul>
             <img src="${data.sprites.front_default}" alt="pokeball">
             ${data.stats.map(element => `<p>${element.stat.name} : ${element.base_stat}</p>`).join('')}
-            <button>Ajouter au panier</button>
             </div>`;
 
+            const reservationButton = document.createElement('button');
+            reservationButton.classList.add('reservation_button');
+            reservationButton.textContent = 'Ajouter au panier';
+
+            pokemon.querySelector('.pokemon').appendChild(reservationButton);
             pokemons.appendChild(pokemon);
+
+
+            if (!localStorage.getItem("reservation_list")) {
+                localStorage.setItem("reservation_list", JSON.stringify([]));
+            }
+            
+            reservationButton.addEventListener("click", () => {
+                let reservation_list = JSON.parse(localStorage.getItem("reservation_list"));
+                reservation_list.push(data.name);
+                localStorage.setItem("reservation_list", JSON.stringify(reservation_list));
+            });
         })
 
         .catch(error => {
@@ -46,4 +62,3 @@ fetch(apiUrl3)
     .catch(error => {
     console.error(error);
     });
-
