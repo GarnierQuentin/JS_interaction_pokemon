@@ -34,7 +34,7 @@ fetch(apiUrl3)
 
             const pokemon = document.createElement('div');
             pokemon.innerHTML = `<div class="pokemon">
-            <h1>${data.name}</h1>
+            <h1>${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h1>
             <p>Type(s) :</p>
             <ul>
             ${data.types.map(type => `<li>${type.type.name}</li>`).join('')}
