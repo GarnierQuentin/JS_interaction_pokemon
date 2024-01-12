@@ -126,4 +126,13 @@ nav ul li a img {
   color: rgb(203, 240, 240);
   font-size: 1.5rem;
   font-weight: bolder;
+  transition: all 0.1s linear;
+}
+.pokemons div .pokemon button:hover {
+  cursor: pointer;
+  background-color: rgb(146, 191, 216);
+  color: black;
+  transform: scale(1.1);
+  rotate: 3deg;
+  transition: all 0.1s linear;
 }/*# sourceMappingURL=style.css.map */
