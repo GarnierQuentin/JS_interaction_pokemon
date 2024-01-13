@@ -114,6 +114,9 @@ nav ul li a img {
   margin-left: auto;
   margin-right: auto;
 }
+.pokemons div .pokemon h2 {
+  text-align: right;
+}
 .pokemons div .pokemon button {
   width: -moz-max-content;
   width: max-content;

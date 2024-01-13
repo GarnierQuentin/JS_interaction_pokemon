@@ -27,6 +27,16 @@ fetch(apiUrl3)
                 localStorage.setItem("reservation_list", JSON.stringify([]));
             }
 
+            let moyenne = 0;
+            let nbStats = 0;
+            let prix = 0;
+            data.stats.forEach(element => {
+                moyenne += element.base_stat;
+                nbStats++;
+            });
+            moyenne = moyenne / nbStats;
+            prix = Math.round((moyenne * 0.5)*100)/100;
+
             if (!localStorage.getItem("reservation_list").includes(data.name)) {
                 const pokemon = document.createElement('div');
                 pokemon.innerHTML = `<div class="pokemon">
@@ -37,6 +47,7 @@ fetch(apiUrl3)
                 </ul>
                 <img src="${data.sprites.front_default}" alt="pokeball">
                 ${data.stats.map(element => `<p>${element.stat.name} : ${element.base_stat}</p>`).join('')}
+                <h2>Prix : ${prix}€</h2>
                 </div>`;
 
                 const reservationButton = document.createElement('button');
