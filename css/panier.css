@@ -1,1 +1,52 @@
-/*# sourceMappingURL=panier.css.map */
+body {
+  max-height: 100vh;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  margin-top: auto;
+  height: 80%;
+  text-align: center;
+}
+.container .panier {
+  display: flex;
+  flex-direction: column;
+}
+.container .panier h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.container .panier .panier_items {
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  margin-top: 5%;
+  height: 100%;
+  overflow-y: scroll;
+}
+.container .paying {
+  display: flex;
+  flex-direction: column;
+}
+.container .paying .top_pay {
+  display: flex;
+  flex-direction: column;
+}
+.container .paying .top_pay .shopping_list {
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  margin-top: 5%;
+  height: 100%;
+  overflow-y: scroll;
+}
+.container .paying .top_pay button {
+  font-size: 2rem;
+}/*# sourceMappingURL=panier.css.map */
