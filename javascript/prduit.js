@@ -27,6 +27,10 @@ fetch(apiUrl3)
                 localStorage.setItem("reservation_list", JSON.stringify([]));
             }
 
+            if (!localStorage.getItem("bought_pokemon")) {
+                localStorage.setItem("bought_pokemon", JSON.stringify([]));
+            }
+
             let moyenne = 0;
             let nbStats = 0;
             let prix = 0;
@@ -37,7 +41,7 @@ fetch(apiUrl3)
             moyenne = moyenne / nbStats;
             prix = Math.round((moyenne * 0.5)*100)/100;
 
-            if (!localStorage.getItem("reservation_list").includes(data.name)) {
+            if (!localStorage.getItem("reservation_list").includes(data.name) && !localStorage.getItem("bought_pokemon").includes(data.name)) {
                 const pokemon = document.createElement('div');
                 pokemon.innerHTML = `<div class="pokemon">
                 <h1>${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h1>
