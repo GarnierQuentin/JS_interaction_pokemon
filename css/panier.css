@@ -11,6 +11,12 @@
   height: calc(100vh - 10rem);
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .container .panier {
   display: flex;
   flex-direction: column;
@@ -27,6 +33,11 @@
   margin-left: auto;
   margin-right: auto;
 }
+@media screen and (max-width: 768px) {
+  .container .panier h1 {
+    font-size: 1.5rem;
+  }
+}
 .container .panier .panier_items {
   display: flex;
   flex-direction: column;
@@ -41,10 +52,21 @@
   grid-template-columns: 1fr 1fr 2fr;
   background-color: rgb(228, 251, 255);
 }
+@media screen and (max-width: 768px) {
+  .container .panier .panier_items .pokemon_info {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .container .panier .panier_items .pokemon_info img {
   width: 75%;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (max-width: 768px) {
+  .container .panier .panier_items .pokemon_info img {
+    width: 60%;
+  }
 }
 .container .panier .panier_items .pokemon_info h1 {
   font-size: 1.2rem;
@@ -55,14 +77,30 @@
   align-items: center;
   width: 100%;
 }
+@media screen and (max-width: 768px) {
+  .container .panier .panier_items .pokemon_info h1 {
+    justify-content: center;
+  }
+}
 .container .panier .panier_items .pokemon_info .pokemon_decision {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
+@media screen and (max-width: 768px) {
+  .container .panier .panier_items .pokemon_info .pokemon_decision {
+    display: flex;
+    flex-direction: row;
+  }
+}
 .container .panier .panier_items .pokemon_info .pokemon_decision input {
   height: 25%;
+}
+@media screen and (max-width: 768px) {
+  .container .panier .panier_items .pokemon_info .pokemon_decision input {
+    height: 100%;
+  }
 }
 .container .panier div .panier_button {
   font-size: 2rem;
