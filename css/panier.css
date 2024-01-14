@@ -32,8 +32,37 @@
   flex-direction: column;
   gap: 5%;
   margin-top: 5%;
+  margin-bottom: 5%;
   height: 100%;
   overflow-y: scroll;
+}
+.container .panier .panier_items .pokemon_info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  background-color: rgb(228, 251, 255);
+}
+.container .panier .panier_items .pokemon_info img {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container .panier .panier_items .pokemon_info h1 {
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  text-align: start;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.container .panier .panier_items .pokemon_info .pokemon_decision {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.container .panier .panier_items .pokemon_info .pokemon_decision input {
+  height: 25%;
 }
 .container .panier div .panier_button {
   font-size: 2rem;
@@ -41,7 +70,7 @@
   background-color: rgb(146, 191, 216);
   transition: all 0.1s linear;
 }
-.container .panier div :hover {
+.container .panier div .panier_button:hover {
   cursor: pointer;
   background-color: rgb(221, 11, 11);
   color: rgb(203, 240, 240);
