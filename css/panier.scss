@@ -1,5 +1,7 @@
 .container{
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 5%;
     justify-content: space-between;
     width: 75%;
     margin-left: auto;
@@ -8,16 +10,22 @@
     margin-top: auto;
     height: calc(100vh - 10rem);
     text-align: center;
-    background-color: grey;
 
     .panier{
         display: flex;
         flex-direction: column;
+        height: 80%;
 
         h1{
             text-align: center;
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: bolder;
+            background-color: rgb(228, 251, 255);
+            border: 5px solid black;
+            padding: 2%;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .panier_items{
@@ -28,27 +36,82 @@
             height: 100%;
             overflow-y: scroll;
         }
+
+        div{
+
+            .panier_button{
+                font-size: 2rem;
+                padding: 1%;
+                background-color: rgb(146, 191, 216);
+                transition: all 0.1s linear;
+            }
+
+            :hover{
+                cursor: pointer;
+                background-color: rgb(221, 11, 11);
+                color: rgb(203, 240, 240);
+                transition: all 0.1s linear;
+                transform: scale(1.1);
+            }
+        }
     }
 
     .paying{
         display: flex;
         flex-direction: column;
+        height: 70%;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
 
-        .top_pay{
+        .solde{
+            font-size: 2rem;
+            background-color: rgb(228, 251, 255);
+            border: 3px solid black;
+        }
+
+        .to_pay{
             display: flex;
             flex-direction: column;
 
             .shopping_list{
-                display: flex;
-                flex-direction: column;
-                gap: 5%;
-                margin-top: 5%;
-                height: 100%;
-                overflow-y: scroll;
+
+                .list{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5%;
+                    height: 30vh;
+                    margin-top: 10%;
+                    margin-bottom: 10%;
+                    border: 3px solid black;
+                    overflow-y: scroll;
+                    align-items: end;
+                    justify-content: center;
+
+                    .pokemon_shopping{
+                        margin: 3%;
+                    }
+                }
+
+                .total{
+                    font-size: 2rem;
+                    font-weight: bolder;
+                    margin-bottom: 5%;
+                    text-align: center;
+                }
+
             }
 
-            button{
+            .to_pay_button{
                 font-size: 2rem;
+                padding: 1%;
+                cursor: pointer;
+            }
+
+            .to_pay_button:hover{
+                background-color: rgb(203, 240, 240);
+                transition: all 0.1s linear;
+                transform: scale(1.1);
             }
         }
     }

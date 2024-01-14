@@ -1,5 +1,7 @@
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5%;
   justify-content: space-between;
   width: 75%;
   margin-left: auto;
@@ -8,16 +10,22 @@
   margin-top: auto;
   height: calc(100vh - 10rem);
   text-align: center;
-  background-color: grey;
 }
 .container .panier {
   display: flex;
   flex-direction: column;
+  height: 80%;
 }
 .container .panier h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bolder;
+  background-color: rgb(228, 251, 255);
+  border: 5px solid black;
+  padding: 2%;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .container .panier .panier_items {
   display: flex;
@@ -27,22 +35,64 @@
   height: 100%;
   overflow-y: scroll;
 }
+.container .panier div .panier_button {
+  font-size: 2rem;
+  padding: 1%;
+  background-color: rgb(146, 191, 216);
+  transition: all 0.1s linear;
+}
+.container .panier div :hover {
+  cursor: pointer;
+  background-color: rgb(221, 11, 11);
+  color: rgb(203, 240, 240);
+  transition: all 0.1s linear;
+  transform: scale(1.1);
+}
 .container .paying {
   display: flex;
   flex-direction: column;
+  height: 70%;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.container .paying .top_pay {
+.container .paying .solde {
+  font-size: 2rem;
+  background-color: rgb(228, 251, 255);
+  border: 3px solid black;
+}
+.container .paying .to_pay {
   display: flex;
   flex-direction: column;
 }
-.container .paying .top_pay .shopping_list {
+.container .paying .to_pay .shopping_list .list {
   display: flex;
   flex-direction: column;
   gap: 5%;
-  margin-top: 5%;
-  height: 100%;
+  height: 30vh;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  border: 3px solid black;
   overflow-y: scroll;
+  align-items: end;
+  justify-content: center;
 }
-.container .paying .top_pay button {
+.container .paying .to_pay .shopping_list .list .pokemon_shopping {
+  margin: 3%;
+}
+.container .paying .to_pay .shopping_list .total {
   font-size: 2rem;
+  font-weight: bolder;
+  margin-bottom: 5%;
+  text-align: center;
+}
+.container .paying .to_pay .to_pay_button {
+  font-size: 2rem;
+  padding: 1%;
+  cursor: pointer;
+}
+.container .paying .to_pay .to_pay_button:hover {
+  background-color: rgb(203, 240, 240);
+  transition: all 0.1s linear;
+  transform: scale(1.1);
 }/*# sourceMappingURL=panier.css.map */
