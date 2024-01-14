@@ -1,5 +1,7 @@
 const panier_items = document.querySelector('.panier_items');
 
+const panier_button = document.querySelector('.panier_button');
+
 
 
 if (!localStorage.getItem("current_money")) {
@@ -53,6 +55,7 @@ if (localStorage.getItem("reservation_list")) {
             prix = Math.round((moyenne * 0.5)*100)/100;
 
             const checker = document.createElement('input');
+            checker.classList.add('checker');
             checker.type = 'checkbox';
 
             pokemonInfo.innerHTML = `<img src="${data.sprites.front_default}" alt="pokeball">
@@ -78,6 +81,17 @@ if (localStorage.getItem("reservation_list")) {
             list.appendChild(pokemon_shopping);
 
             total.innerHTML = `Total : ${total_price}€`;
+
+            panier_button.addEventListener('click', () => {
+                if (checker.checked) {
+                    panier_items.removeChild(pokemonInfo);
+                    list.removeChild(pokemon_shopping);
+                    total_price -= prix;
+                    localStorage.setItem("total_price", total_price);
+                    total.innerHTML = `Total : ${total_price}€`;
+                    localStorage.setItem("reservation_list", JSON.stringify(listeReservation.filter(pokemon => pokemon !== data.name)));
+                }
+            });
         })
 
 
