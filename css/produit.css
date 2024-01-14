@@ -4,6 +4,16 @@
   justify-content: center;
   margin: 5%;
 }
+@media screen and (max-width: 900px) {
+  .pokemons {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 600px) {
+  .pokemons {
+    grid-template-columns: 1fr;
+  }
+}
 .pokemons div .pokemon {
   margin: 5%;
   padding: 5%;

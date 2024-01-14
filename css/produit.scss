@@ -4,6 +4,14 @@
     justify-content: center;
     margin: 5%;
 
+    @media screen and (max-width: 900px){
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 600px){
+        grid-template-columns: 1fr;
+    }
+
     div{
 
         .pokemon{
