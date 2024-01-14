@@ -39,7 +39,7 @@ fetch(apiUrl3)
                 nbStats++;
             });
             moyenne = moyenne / nbStats;
-            prix = Math.round((moyenne * 0.5)*100)/100;
+            prix = parseFloat((moyenne * 0.5).toFixed(2));
 
             if (!localStorage.getItem("reservation_list").includes(data.name) && !localStorage.getItem("bought_pokemon").includes(data.name)) {
                 const pokemon = document.createElement('div');

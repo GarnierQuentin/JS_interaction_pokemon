@@ -44,13 +44,13 @@ if (localStorage.getItem("reservation_list")) {
             let moyenne = 0;
             let nbStats = 0;
             let prix = 0;
-            localStorage.setItem("total_price", 0);
+            
             data.stats.forEach(element => {
                 moyenne += element.base_stat;
                 nbStats++;
             });
             moyenne = moyenne / nbStats;
-            prix = Math.round((moyenne * 0.5)*100)/100;
+            prix = parseFloat((moyenne * 0.5).toFixed(2));
 
             const supprButton = document.createElement('button');
             supprButton.classList.add('supprButton');
@@ -62,7 +62,8 @@ if (localStorage.getItem("reservation_list")) {
             <h2>Prix : ${prix}€</h2>
             </div>`;
 
-            total_price += Math.round((prix)*100)/100;
+            total_price += parseFloat((prix).toFixed(2));
+            total_price = parseFloat((total_price).toFixed(2));
             localStorage.setItem("total_price", total_price);
 
             const pokemonDecision = pokemonInfo.querySelector(".pokemon_decision");
@@ -87,6 +88,7 @@ if (localStorage.getItem("reservation_list")) {
                 localStorage.setItem("total_price", total_price);
                 total.innerHTML = `Total : ${total_price}€`;
                 localStorage.setItem("reservation_list", JSON.stringify(listeReservation.filter(pokemon => pokemon !== data.name)));
+                location.reload();
             });
         })
 
