@@ -89,34 +89,34 @@
 
                     @media screen and (max-width: 768px){
                         display: flex;
-                        flex-direction: row;
+                        flex-direction: column;
                     }
 
-                    input{
-                        height: 25%;
-                        @media screen and (max-width: 768px){
-                            height: 100%;
-                        }
+                    button{
+                        width: max-content;
+                        height: max-content;
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;
+                        margin-left: auto;
+                        margin-right: auto;
+                        padding: 1%;
+                        font-size: 1.3rem;
+                        cursor: pointer;
+                        border: 2px solid black;
+                        background-color: rgb(228, 251, 255);
+                        transition: all 0.1s linear;
+                        margin-top: 2%;
+                        margin-bottom: 2%;
+                    }
+
+                    button:hover{
+                        background-color: rgb(227, 34, 34);
+                        color: whitesmoke;
+                        transition: all 0.1s linear;
+                        transform: scale(1.1);
                     }
                 }
-            }
-        }
-
-        div{
-
-            .panier_button{
-                font-size: 2rem;
-                padding: 1%;
-                background-color: rgb(146, 191, 216);
-                transition: all 0.1s linear;
-            }
-
-            .panier_button:hover{
-                cursor: pointer;
-                background-color: rgb(221, 11, 11);
-                color: rgb(203, 240, 240);
-                transition: all 0.1s linear;
-                transform: scale(1.1);
             }
         }
     }
@@ -171,6 +171,7 @@
                 font-size: 2rem;
                 padding: 1%;
                 cursor: pointer;
+                transition: all 0.1s linear ;
             }
 
             .to_pay_button:hover{

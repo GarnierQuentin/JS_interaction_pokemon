@@ -91,27 +91,31 @@
 @media screen and (max-width: 768px) {
   .container .panier .panier_items .pokemon_info .pokemon_decision {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
 }
-.container .panier .panier_items .pokemon_info .pokemon_decision input {
-  height: 25%;
-}
-@media screen and (max-width: 768px) {
-  .container .panier .panier_items .pokemon_info .pokemon_decision input {
-    height: 100%;
-  }
-}
-.container .panier div .panier_button {
-  font-size: 2rem;
+.container .panier .panier_items .pokemon_info .pokemon_decision button {
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
   padding: 1%;
-  background-color: rgb(146, 191, 216);
-  transition: all 0.1s linear;
-}
-.container .panier div .panier_button:hover {
+  font-size: 1.3rem;
   cursor: pointer;
-  background-color: rgb(221, 11, 11);
-  color: rgb(203, 240, 240);
+  border: 2px solid black;
+  background-color: rgb(228, 251, 255);
+  transition: all 0.1s linear;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.container .panier .panier_items .pokemon_info .pokemon_decision button:hover {
+  background-color: rgb(227, 34, 34);
+  color: whitesmoke;
   transition: all 0.1s linear;
   transform: scale(1.1);
 }
@@ -157,6 +161,7 @@
   font-size: 2rem;
   padding: 1%;
   cursor: pointer;
+  transition: all 0.1s linear;
 }
 .container .paying .to_pay .to_pay_button:hover {
   background-color: rgb(203, 240, 240);
