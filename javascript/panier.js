@@ -1,7 +1,5 @@
 const panier_items = document.querySelector('.panier_items');
 
-const panier_button = document.querySelector('.panier_button');
-
 
 
 if (!localStorage.getItem("current_money")) {
@@ -54,9 +52,9 @@ if (localStorage.getItem("reservation_list")) {
             moyenne = moyenne / nbStats;
             prix = Math.round((moyenne * 0.5)*100)/100;
 
-            const checker = document.createElement('input');
-            checker.classList.add('checker');
-            checker.type = 'checkbox';
+            const supprButton = document.createElement('button');
+            supprButton.classList.add('supprButton');
+            supprButton.innerHTML = "Supprimer";
 
             pokemonInfo.innerHTML = `<img src="${data.sprites.front_default}" alt="pokeball">
             <h1>${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h1>
@@ -68,7 +66,7 @@ if (localStorage.getItem("reservation_list")) {
             localStorage.setItem("total_price", total_price);
 
             const pokemonDecision = pokemonInfo.querySelector(".pokemon_decision");
-            pokemonDecision.appendChild(checker);
+            pokemonDecision.appendChild(supprButton);
 
             panier_items.appendChild(pokemonInfo);
 
@@ -82,15 +80,13 @@ if (localStorage.getItem("reservation_list")) {
 
             total.innerHTML = `Total : ${total_price}€`;
 
-            panier_button.addEventListener('click', () => {
-                if (checker.checked) {
-                    panier_items.removeChild(pokemonInfo);
-                    list.removeChild(pokemon_shopping);
-                    total_price -= prix;
-                    localStorage.setItem("total_price", total_price);
-                    total.innerHTML = `Total : ${total_price}€`;
-                    localStorage.setItem("reservation_list", JSON.stringify(listeReservation.filter(pokemon => pokemon !== data.name)));
-                }
+            supprButton.addEventListener('click', () => {
+                panier_items.removeChild(pokemonInfo);
+                list.removeChild(pokemon_shopping);
+                total_price -= prix;
+                localStorage.setItem("total_price", total_price);
+                total.innerHTML = `Total : ${total_price}€`;
+                localStorage.setItem("reservation_list", JSON.stringify(listeReservation.filter(pokemon => pokemon !== data.name)));
             });
         })
 
