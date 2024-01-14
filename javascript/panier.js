@@ -16,7 +16,7 @@ if (!localStorage.getItem("total_price")) {
 
 
 let current_money = document.querySelector('.solde');
-current_money.innerHTML = `Solde : ${localStorage.getItem("current_money")}€`;
+current_money.innerHTML = `Solde : ${parseFloat(localStorage.getItem("current_money"))}€`;
 
 
 
@@ -90,7 +90,7 @@ console.log(localStorage.getItem("total_price"));
 const buy = document.querySelector('.to_pay_button');
 
 buy.addEventListener('click', () => {
-    if (localStorage.getItem("total_price") <= localStorage.getItem("current_money")) {
+    if (parseFloat(localStorage.getItem("total_price")) <= parseFloat(localStorage.getItem("current_money"))) {
         let listePokemon = JSON.parse(localStorage.getItem("bought_pokemon"));
         let listeReservation = JSON.parse(localStorage.getItem("reservation_list"));
 
